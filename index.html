@@ -36,11 +36,11 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="data/ADMINISTRASIKECAMATAN_AR_50K_1.js"></script>
-        <script src="data/Titik_gerai_2.js"></script>
+        <script src="data/Titik_Gerai_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-3.6203900538332707,103.9635655813948],[-3.277326664470028,104.65228151777687]]);
+        }).fitBounds([[-3.6047531552693424,103.90664117987176],[-3.2299371003575206,104.66044383188506]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -242,13 +242,13 @@
         });
         bounds_group.addLayer(layer_ADMINISTRASIKECAMATAN_AR_50K_1);
         map.addLayer(layer_ADMINISTRASIKECAMATAN_AR_50K_1);
-        function pop_Titik_gerai_2(feature, layer) {
+        function pop_Titik_Gerai_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nama_gerai'] !== null ? autolinker.link(String(feature.properties['Nama_gerai']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Nama_Gerai'] !== null ? autolinker.link(String(feature.properties['Nama_Gerai']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Narasumber'] !== null ? autolinker.link(String(feature.properties['Narasumber']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -273,10 +273,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Titik_gerai_2_0() {
+        function style_Titik_Gerai_2_0() {
             return {
-                pane: 'pane_Titik_gerai_2',
-                radius: 9.200000000000005,
+                pane: 'pane_Titik_Gerai_2',
+                radius: 10.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -285,30 +285,30 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(196,60,57,1.0)',
+                fillColor: 'rgba(213,180,60,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Titik_gerai_2');
-        map.getPane('pane_Titik_gerai_2').style.zIndex = 402;
-        map.getPane('pane_Titik_gerai_2').style['mix-blend-mode'] = 'normal';
-        var layer_Titik_gerai_2 = new L.geoJson(json_Titik_gerai_2, {
+        map.createPane('pane_Titik_Gerai_2');
+        map.getPane('pane_Titik_Gerai_2').style.zIndex = 402;
+        map.getPane('pane_Titik_Gerai_2').style['mix-blend-mode'] = 'normal';
+        var layer_Titik_Gerai_2 = new L.geoJson(json_Titik_Gerai_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Titik_gerai_2',
-            layerName: 'layer_Titik_gerai_2',
-            pane: 'pane_Titik_gerai_2',
-            onEachFeature: pop_Titik_gerai_2,
+            dataVar: 'json_Titik_Gerai_2',
+            layerName: 'layer_Titik_Gerai_2',
+            pane: 'pane_Titik_Gerai_2',
+            onEachFeature: pop_Titik_Gerai_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Titik_gerai_2_0(feature));
+                return L.circleMarker(latlng, style_Titik_Gerai_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Titik_gerai_2);
-        map.addLayer(layer_Titik_gerai_2);
+        bounds_group.addLayer(layer_Titik_Gerai_2);
+        map.addLayer(layer_Titik_Gerai_2);
         setBounds();
         </script>        
     </body>
